@@ -1,0 +1,11 @@
+# Criar container para Postgrees:
+  docker container run -d -p 5432:5432 -e POSTGRES_DB=curso_docker -e POSTGRES_USER=docker_usr -e POSTGRES_PASSWORD=docker_pwd postgres 
+
+# Listar os containers
+  docker container ls -a
+
+# Testar
+  utilizar o cliente DBeaver Community Nova conexão selecionar Postgrees definir usuário e senha
+
+# Eliminar o container de banco
+  docker container rm -f 9c8631289848
