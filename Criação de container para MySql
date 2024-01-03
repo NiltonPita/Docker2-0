@@ -1,6 +1,6 @@
 Desafio 01
 Criar container para MySql:
-docker container run -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD="root1234" -e MYSQL_DATABASE=auladocker -e MYSQL_USER=userdocker -e MYSQL_PASSWORD=auladockerpwd mysql
+docker container run -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD="root1234" -e  MYSQL_DATABASE=docker_db -e MYSQL_USER=docker_usr -e MYSQL_PASSWORD=docker_pwd mysql
 
 Listar os containers
 docker container ls -a
