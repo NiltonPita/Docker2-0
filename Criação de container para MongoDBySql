@@ -1,0 +1,56 @@
+Desafio 03 - 
+Criação de container para MongoDB:
+		Para executar
+			docker container run -d -p 27017:27017 --name mongodb -e MONGO_INITDB_ROOT_USERNAME=docker_usr -e MONGO_INITDB_ROOT_PASSWORD=docker_pwd mongo
+		Testar
+			docker exec -it mongodb mongosh -u docker_usr -p docker_pwd
+
+			Listar os bancos 
+				test> show dbs
+					Resultado:
+						admin   100.00 KiB
+						config   60.00 KiB
+						local    72.00 KiB
+					
+			Criar um banco
+				use mongoOne
+				
+			Criar um collection ( Tabela no SQL ), já inserindo um documento ( registro )
+				mongoOne> db.pessoas.insertOne({ nome: "Nilton Pita", idade: 50})
+					Resultado:
+						{
+							  acknowledged: true,
+							  insertedId: ObjectId('65971bba85ca40803a15b319')
+							}
+							mongoOne>
+						
+			Verificar se o banco mogoOne foi criado?
+				mongoOne> show dbs
+					Resultado:
+							admin     100.00 KiB
+							config     92.00 KiB
+							local      72.00 KiB
+							mongoOne   40.00 KiB
+							
+			Verificar se foi criada a "Tabela pessoas" no banco "mongoOne"
+				mongoOne> db.pessoas.find({nome: "Nilton Pita"})
+					Resultado:
+						[	
+						  {
+							_id: ObjectId('65971bba85ca40803a15b319'),
+							nome: 'Nilton Pita',
+							idade: 50
+						  }
+						]
+							
+		Eliminar o container de banco
+        Exit
+				docker container rm -f 7a60b1ed61d4
+
+
+
+
+
+
+# Eliminar o container de banco
+  docker container rm -f 7a60b1ed61d4
