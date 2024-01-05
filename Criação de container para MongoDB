@@ -1,9 +1,9 @@
 Desafio 03 - 
 Criação de container para MongoDB:
 		Para executar
-			docker container run -d -p 27017:27017 --name mongodb -e MONGO_INITDB_ROOT_USERNAME=docker_usr -e MONGO_INITDB_ROOT_PASSWORD=docker_pwd mongo
+			docker container run -d -p 27017:27017 --name mongodb -e MONGO_INITDB_ROOT_USERNAME=mongo_usr -e MONGO_INITDB_ROOT_PASSWORD=mongo_pwd mongo
 		Testar
-			docker exec -it mongodb mongosh -u docker_usr -p docker_pwd
+			docker exec -it mongodb mongosh -u mongo_usr -p mongo_pwd
 
 			Listar os bancos 
 				test> show dbs
